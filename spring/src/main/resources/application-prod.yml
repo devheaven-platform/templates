@@ -1,0 +1,40 @@
+spring:
+  # Setup database connection
+  datasource:
+    url: ${JDBC_URL}
+    username: ${JDBC_USERNAME}
+    password: ${JDBC_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  # Setup hibernate
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        temp:
+          use_jdbc_metadata_defaults: false
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  # Configure exceptions and disable automatic mapping of resources
+  mvc:
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
+
+security:
+  # Setup token key and expire time
+  jwt:
+    header: Authorization
+    prefix: Bearer
+    issuer: Devheaven
+    secret: ${SECRET_KEY}
+    expires: 86400000 # 24 hours
+
+springfox:
+  # Configure swagger to listen on /swagger-docs instead of /v2/api-docs
+  documentation:
+    swagger:
+      v2:
+        path: '/swagger-docs'
