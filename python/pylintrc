@@ -1,0 +1,11 @@
+[MESSAGES CONTROL]
+
+# Disable:
+# C0103: Uppercase naming style
+# C0301: Line too long
+# R0902: Too many instance attributes
+# R0904: Too many public arguments
+# R0913: Too many arguments
+# W0511: Todo comments
+# C0302: Too many lines in module
+disable=C0103, C0301, R0902, R0904, R0913, W0511, C0302
