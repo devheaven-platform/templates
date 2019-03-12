@@ -105,5 +105,4 @@ $RECYCLE.BIN/
 
 # Custom
 debug
-*.sqlite
 .env
