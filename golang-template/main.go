@@ -17,8 +17,8 @@ func main() {
 		}
 	}
 
-	host := os.Getenv("HOSTNAME")
-	port := os.Getenv("PORT")
+	host := os.Getenv("GO_HOST")
+	port := os.Getenv("GO_PORT")
 
 	log.WithFields(log.Fields{
 		"host": host,
