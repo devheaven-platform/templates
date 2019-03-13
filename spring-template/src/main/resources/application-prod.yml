@@ -1,9 +1,13 @@
+server:
+  port: ${SPRING_PORT}
+  address: ${SPRING_HOST}
+
 spring:
   # Setup database connection
   datasource:
-    url: ${JDBC_URL}
-    username: ${JDBC_USERNAME}
-    password: ${JDBC_PASSWORD}
+    url: ${POSTGRES_URL}
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}
     driver-class-name: org.postgresql.Driver
   # Setup hibernate
   jpa:
