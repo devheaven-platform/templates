@@ -9,8 +9,9 @@ const app = express();
 app.disable( "x-powered-by" );
 
 // Server config
-const port = process.env.NODE_PORT;
-const host = process.env.NODE_HOST;
+const port = process.env.PORT;
+const host = process.env.HOSTNAME;
+const mongoDB = process.env.MONGO_DB;
 const mongoURI = process.env.MONGO_URI;
 
 // Middleware
@@ -19,7 +20,7 @@ app.use( cors() );
 
 // Connect database
 mongoose
-    .connect( mongoURI, { useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false } )
+    .connect( mongoURI + mongoDB, { useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false } )
     .then( () => logger.info( "MongoDB connected" ) )
     .catch( error => logger.error( error.stack ) );
 
