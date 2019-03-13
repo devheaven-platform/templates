@@ -31,7 +31,7 @@ def start_app(app=None):
     host = os.getenv('FLASK_HOST')
     port = os.getenv('FLASK_PORT')
     prometheus_port = int(os.getenv('PROMETHEUS_PORT'))
-    monitor(app, port = prometheus_port)
+    monitor(app, port=prometheus_port)
     app.run(host=host, port=port, threaded=True)
 
 
