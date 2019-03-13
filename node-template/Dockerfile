@@ -7,7 +7,7 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json /app/package.json
 RUN npm config set unsafe-perm true
-RUN npm install --silent
+RUN npm install --silent --production
 
 # Copy source
 COPY . /app
