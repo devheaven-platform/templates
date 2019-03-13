@@ -14,4 +14,4 @@ COPY src src
 RUN ./mvnw install -DskipTests -q
 
 # Run app
-ENTRYPOINT ["java", "-jar", "-Dspring.profiles.active=prod", "target/kwetter-1.0.0.jar"]
+ENTRYPOINT ["java", "-jar", "-Dspring.profiles.active=prod", "target/app-1.0.0.jar"]
