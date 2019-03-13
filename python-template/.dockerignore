@@ -1,0 +1,18 @@
+# VS Code
+.vscode/
+
+# Python
+venv/
+pylintrc
+
+# Docker
+.dockerignore
+docker-compose.yml
+Dockerfile
+
+# Git
+README.md
+
+# Custom
+.env
+.env.example
