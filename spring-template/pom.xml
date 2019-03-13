@@ -42,6 +42,24 @@
 		</dependency>
 		<!-- Spring Devtools (Auto Restart, etc..) -->
 
+		<!-- Spring Actuator -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<!-- Spring Actuator -->
+
+		<!-- Micrometer (Metrics) -->
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-prometheus</artifactId>
+		</dependency>
+		<!-- Micrometer (Metrics) -->
+
 		<!-- JPA Data (Repositories, Entities, Hibernate, etc..) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
