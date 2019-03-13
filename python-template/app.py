@@ -4,6 +4,7 @@ Description: Contains functions to create & start the Flask server.
 '''
 import os
 from flask import Flask
+from flask_prometheus import monitor
 from flask_cors import CORS
 from dotenv import load_dotenv, find_dotenv
 from models import mongo
@@ -29,6 +30,8 @@ def start_app(app=None):
 
     host = os.getenv('FLASK_HOST')
     port = os.getenv('FLASK_PORT')
+    prometheus_port = int(os.getenv('PROMETHEUS_PORT'))
+    monitor(app, port = prometheus_port)
     app.run(host=host, port=port, threaded=True)
 
 
