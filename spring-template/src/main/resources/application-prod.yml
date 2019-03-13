@@ -23,6 +23,22 @@ spring:
   resources:
     add-mappings: false
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+      base-path: '/metrics'
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
 security:
   # Setup token key and expire time
   jwt:
