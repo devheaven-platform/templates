@@ -14,9 +14,20 @@ namespace AspTemplate
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
+            if (File.Exists(".env"))
+            {
+              DotNetEnv.Env.Load();
+            }
+
+            string host = System.Environment.GetEnvironmentVariable("ASP_HOST");
+            string port = System.Environment.GetEnvironmentVariable("ASP_PORT");
+
+            CreateWebHostBuilder(args, host, port).Build().Run();
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) => WebHost.CreateDefaultBuilder(args).UseStartup<Startup>();
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args, string host, string port) => WebHost
+            .CreateDefaultBuilder(args)
+            .UseStartup<Startup>()
+            .UseUrls($"http://{host}:{port}");
     }
 }
