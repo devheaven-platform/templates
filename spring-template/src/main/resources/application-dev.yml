@@ -17,15 +17,6 @@ spring:
   resources:
     add-mappings: false
 
-security:
-  # Setup token key and expire time
-  jwt:
-    header: Authorization
-    prefix: Bearer
-    issuer: Devheaven
-    secret: secret
-    expires: 86400000 # 24 hours
-
 springfox:
   # Configure swagger to listen on /swagger-docs instead of /v2/api-docs
   documentation:
