@@ -3,6 +3,7 @@ const express = require( "express" );
 const bodyparser = require( "body-parser" );
 const cors = require( "cors" );
 const mongoose = require( "mongoose" );
+const Prometheus = require( "prom-client" );
 const logger = require( "./config/logger" );
 
 const app = express();
@@ -23,6 +24,13 @@ mongoose
     .connect( mongoURI + mongoDB, { useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false } )
     .then( () => logger.info( "MongoDB connected" ) )
     .catch( error => logger.error( error.stack ) );
+
+// Prometheus
+Prometheus.collectDefaultMetrics();
+app.get( "/metrics", ( req, res ) => {
+    res.set( "Content-Type", Prometheus.register.contentType );
+    res.end( Prometheus.register.metrics() );
+} );
 
 // Not found
 app.all( "*", ( req, res ) => res.status( 404 ).json( {
