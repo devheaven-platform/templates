@@ -18,16 +18,16 @@ namespace AspTemplate.Models
         public Dictionary<string, string> Errors { get; private set; }
 
         public Error(string name, int status, string message) {
-            this.Name = name;
-            this.Status = status;
-            this.Message = message;
+            Name = name;
+            Status = status;
+            Message = message;
         }
 
         public Error(string name, int status, string message, Dictionary<string, string> errors) {
-            this.Name = name;
-            this.Status = status;
-            this.Message = message;
-            this.Errors = errors;
+            Name = name;
+            Status = status;
+            Message = message;
+            Errors = errors;
         }
     }
 }
