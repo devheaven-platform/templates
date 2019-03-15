@@ -1,9 +1,18 @@
+# VS Code
+.vscode/
+
+# Asp
+bin\
+obj\
+
+# Docker
 .dockerignore
+docker-compose.yml
+Dockerfile
+
+# Git
+README.md
+
+# Custom
 .env
-.git
-.gitignore
-.vs
-.vscode
-*/bin
-*/obj
-**/.toolstarget
+.env.example
