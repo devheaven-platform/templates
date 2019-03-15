@@ -4,6 +4,7 @@ const bodyparser = require( "body-parser" );
 const cors = require( "cors" );
 const mongoose = require( "mongoose" );
 const Prometheus = require( "prom-client" );
+const expressPrometheus = require( "express-prom-bundle" );
 const logger = require( "./config/logger" );
 
 const app = express();
@@ -25,8 +26,11 @@ mongoose
     .then( () => logger.info( "MongoDB connected" ) )
     .catch( error => logger.error( error.stack ) );
 
-// Prometheus
+// Register prometheus
 Prometheus.collectDefaultMetrics();
+app.use( expressPrometheus() );
+
+// Add prometheus
 app.get( "/metrics", ( req, res ) => {
     res.set( "Content-Type", Prometheus.register.contentType );
     res.end( Prometheus.register.metrics() );
