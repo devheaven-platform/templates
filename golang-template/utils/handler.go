@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/tomdewildt/go-sqlite/models"
+	"github.com/devheaven-platform/golang/models"
 )
 
 func RespondJSON(w http.ResponseWriter, status int, payload interface{}) {
