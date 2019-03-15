@@ -1,9 +1,8 @@
 # VS Code
 .vscode/
 
-# Asp
-bin\
-obj\
+# Golang
+debug
 
 # Docker
 .dockerignore
