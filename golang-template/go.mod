@@ -8,6 +8,7 @@ require (
 	github.com/go-playground/universal-translator v0.16.0 // indirect
 	github.com/joho/godotenv v1.3.0
 	github.com/leodido/go-urn v1.1.0 // indirect
+	github.com/prometheus/client_golang v0.9.2
 	github.com/sirupsen/logrus v1.4.0
 	gopkg.in/go-playground/validator.v9 v9.27.0
 )
