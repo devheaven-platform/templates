@@ -9,11 +9,13 @@
     "cors": "^2.8.5",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
+    "express-prom-bundle": "^5.1.0",
     "istanbul": "^0.4.5",
     "mocha": "^6.0.2",
     "mock-require": "^3.0.3",
     "mongoose": "^5.4.19",
     "nock": "^10.0.6",
+    "prom-client": "^11.2.1",
     "sinon": "^7.2.7",
     "winston": "^3.2.1"
   },
