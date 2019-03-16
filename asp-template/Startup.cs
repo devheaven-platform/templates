@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Prometheus.Client.AspNetCore;
+using Prometheus.Client.HttpRequestDurations;
 
 namespace AspTemplate
 {
@@ -35,6 +37,8 @@ namespace AspTemplate
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {  
             app.UseMvc();
+            app.UsePrometheusServer();
+            app.UsePrometheusRequestDurations(); 
         }
     }
 }

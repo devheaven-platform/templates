@@ -11,6 +11,9 @@
     <PackageReference Include="DotNetEnv" Version="1.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Prometheus.Client" Version="2.2.2" />
+    <PackageReference Include="Prometheus.Client.AspNetCore" Version="2.1.0" />
+    <PackageReference Include="Prometheus.Client.HttpRequestDurations" Version="1.2.0" />
   </ItemGroup>
 
 </Project>
